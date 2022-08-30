@@ -25,10 +25,12 @@ export class CustomerListComponent implements OnInit {
   }
 
   deleteCustomer(customerID: number) {
-    this.customerService.deleteCustomer(customerID).subscribe((info) => {
-      console.log(info);
-      this.getCustomers();
-    });
+    if (window.confirm('Are you sure you want to delte this entity?')) {
+      this.customerService.deleteCustomer(customerID).subscribe((info) => {
+        console.log(info);
+        this.getCustomers();
+      });
+    }
   }
 
   private getCustomers() {
