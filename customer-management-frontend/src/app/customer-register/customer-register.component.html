@@ -1,0 +1,159 @@
+<div class="col-md-6 offset-md-3">
+  <h3 calss="text-center">Customer Registry</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Company Name : </label>
+      <input type="text" class="form-control" id="companyName" [(ngModel)]="customer.companyName" name="companyName"
+        required minlength="5" maxlength="65" placeholder="Enter Company Name " #companyName="ngModel">
+      <div class="alert alert-danger" *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+        <div *ngIf="companyName.errors?.['required']">
+          Enter Company Name
+        </div>
+        <div *ngIf="companyName.errors?.['minlength']">
+          Company Name must be larger than 5 characters
+        </div>
+        <div *ngIf="companyName.errors?.['maxlength']">
+          Company Name must be shorter than 65 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Contact Title : </label>
+      <input type="text" class="form-control" id="contactTitle" [(ngModel)]="customer.contactTitle" name="contactTitle"
+        required minlength="5" maxlength="65" placeholder="Enter Contact Title " #contactTitle="ngModel">
+      <div class="alert alert-danger" *ngIf="contactTitle.invalid && (contactTitle.dirty || contactTitle.touched)">
+        <div *ngIf="contactTitle.errors?.['required']">
+          Enter Contact Title
+        </div>
+        <div *ngIf="contactTitle.errors?.['minlength']">
+          Contact Title must be larger than 5 characters
+        </div>
+        <div *ngIf="contactTitle.errors?.['maxlength']">
+          Contact Title must be shorter than 65 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address : </label>
+      <input type="text" class="form-control" id="address" [(ngModel)]="customer.address" name="address" required
+        minlength="5" maxlength="200" placeholder="Enter Address " #address="ngModel">
+      <div class="alert alert-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+        <div *ngIf="address.errors?.['required']">
+          Enter Address
+        </div>
+        <div *ngIf="address.errors?.['minlength']">
+          Address must be larger than 5 characters
+        </div>
+        <div *ngIf="address.errors?.['maxlength']">
+          Address must be shorter than 200 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>City : </label>
+      <input type="text" class="form-control" id="city" [(ngModel)]="customer.city" name="city" required minlength="5"
+        maxlength="200" placeholder="Enter City " #city="ngModel">
+      <div class="alert alert-danger" *ngIf="city.invalid && (city.dirty || city.touched)">
+        <div *ngIf="city.errors?.['required']">
+          Enter City
+        </div>
+        <div *ngIf="city.errors?.['minlength']">
+          City must be larger than 5 characters
+        </div>
+        <div *ngIf="city.errors?.['maxlength']">
+          City must be shorter than 200 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Region : </label>
+      <input type="text" class="form-control" id="region" [(ngModel)]="customer.region" name="region" required
+        minlength="5" maxlength="200" placeholder="Enter Region " #region="ngModel">
+      <div class="alert alert-danger" *ngIf="region.invalid && (region.dirty || region.touched)">
+        <div *ngIf="region.errors?.['required']">
+          Enter Region
+        </div>
+        <div *ngIf="region.errors?.['minlength']">
+          Region must be larger than 5 characters
+        </div>
+        <div *ngIf="region.errors?.['maxlength']">
+          Region must be shorter than 200 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Postal Code : </label>
+      <input type="text" class="form-control" id="postalCode" [(ngModel)]="customer.postalCode" name="postalCode"
+        required minlength="5" maxlength="45" placeholder="Enter Postal Code " #postalCode="ngModel">
+      <div class="alert alert-danger" *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)">
+        <div *ngIf="postalCode.errors?.['required']">
+          Enter Postal Code
+        </div>
+        <div *ngIf="postalCode.errors?.['minlength']">
+          Postal Code must be larger than 5 characters
+        </div>
+        <div *ngIf="postalCode.errors?.['maxlength']">
+          Postal Code must be shorter than 45 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Country : </label>
+      <input type="text" class="form-control" id="country" [(ngModel)]="customer.country" name="country" required
+        minlength="5" maxlength="200" placeholder="Enter Country " #country="ngModel">
+      <div class="alert alert-danger" *ngIf="country.invalid && (country.dirty || country.touched)">
+        <div *ngIf="country.errors?.['required']">
+          Enter Country
+        </div>
+        <div *ngIf="country.errors?.['minlength']">
+          Country must be larger than 5 characters
+        </div>
+        <div *ngIf="country.errors?.['maxlength']">
+          Country must be shorter than 200 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Phone : </label>
+      <input type="text" class="form-control" id="phone" [(ngModel)]="customer.phone" name="phone" required
+        minlength="5" maxlength="45" placeholder="Enter Phone " #phone="ngModel">
+      <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+        <div *ngIf="phone.errors?.['required']">
+          Enter Phone
+        </div>
+        <div *ngIf="phone.errors?.['minlength']">
+          Phone must be larger than 5 characters
+        </div>
+        <div *ngIf="phone.errors?.['maxlength']">
+          Phone must be shorter than 45 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Fax : </label>
+      <input type="text" class="form-control" id="fax" [(ngModel)]="customer.fax" name="fax" required minlength="5"
+        maxlength="45" placeholder="Enter Fax " #fax="ngModel">
+      <div class="alert alert-danger" *ngIf="fax.invalid && (fax.dirty || fax.touched)">
+        <div *ngIf="fax.errors?.['required']">
+          Enter Fax
+        </div>
+        <div *ngIf="fax.errors?.['minlength']">
+          Fax must be larger than 5 characters
+        </div>
+        <div *ngIf="fax.errors?.['maxlength']">
+          Fax must be shorter than 45 characters
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-success">Register</button>
+  </form>
+</div>>
