@@ -1,7 +1,6 @@
 <div class="col-md-6 offset-md-3">
-  <h3 class="text-center">Update Customer</h3>
-  <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
-
+  <h3 calss="text-center">Customer Registry</h3>
+  <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Company Name : </label>
       <input type="text" class="form-control" id="companyName" [(ngModel)]="customer.companyName" name="companyName"
@@ -90,7 +89,8 @@
     <div class="form-group">
       <label>Postal Code : </label>
       <input type="text" class="form-control" id="postalCode" [(ngModel)]="customer.postalCode" name="postalCode"
-        required minlength="5" maxlength="45" placeholder="Enter Postal Code " #postalCode="ngModel">
+        required minlength="5" maxlength="45" pattern="^[0-9 ]*$" placeholder="Enter Postal Code "
+        #postalCode="ngModel">
       <div class="alert alert-danger" *ngIf="postalCode.invalid && (postalCode.dirty || postalCode.touched)">
         <div *ngIf="postalCode.errors?.['required']">
           Enter Postal Code
@@ -100,6 +100,9 @@
         </div>
         <div *ngIf="postalCode.errors?.['maxlength']">
           Postal Code must be shorter than 45 characters
+        </div>
+        <div *ngIf="postalCode.errors?.['pattern']">
+          Postal Code must have only numbers
         </div>
       </div>
     </div>
@@ -124,7 +127,7 @@
     <div class="form-group">
       <label>Phone : </label>
       <input type="text" class="form-control" id="phone" [(ngModel)]="customer.phone" name="phone" required
-        minlength="5" maxlength="45" placeholder="Enter Phone " #phone="ngModel">
+        minlength="5" maxlength="45" pattern="^[0-9 ]*$" placeholder="Enter Phone Number " #phone="ngModel">
       <div class="alert alert-danger" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
         <div *ngIf="phone.errors?.['required']">
           Enter Phone
@@ -135,13 +138,16 @@
         <div *ngIf="phone.errors?.['maxlength']">
           Phone must be shorter than 45 characters
         </div>
+        <div *ngIf="phone.errors?.['pattern']">
+          Phone number must have only numbers
+        </div>
       </div>
     </div>
 
     <div class="form-group">
       <label>Fax : </label>
       <input type="text" class="form-control" id="fax" [(ngModel)]="customer.fax" name="fax" required minlength="5"
-        maxlength="45" placeholder="Enter Fax " #fax="ngModel">
+        maxlength="45" pattern="^[0-9 ]*$" placeholder="Enter Fax Number" #fax="ngModel">
       <div class="alert alert-danger" *ngIf="fax.invalid && (fax.dirty || fax.touched)">
         <div *ngIf="fax.errors?.['required']">
           Enter Fax
@@ -152,9 +158,12 @@
         <div *ngIf="fax.errors?.['maxlength']">
           Fax must be shorter than 45 characters
         </div>
+        <div *ngIf="fax.errors?.['pattern']">
+          Fax number must have only numbers
+        </div>
       </div>
     </div>
 
-    <button class="btn btn-success" [disabled]="!customerForm.form.valid">Update</button>
+    <button class="btn btn-success mt-2">Register</button>
   </form>
-</div>
+</div>>
