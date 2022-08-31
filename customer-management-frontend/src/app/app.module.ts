@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerRegisterComponent } from './customer-register/customer-register.component';
 import { FormsModule } from '@angular/forms';
 import { CustomerUpdateComponent } from './customer-update/customer-update.component';
+import { MaterialModule } from './material/material.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,17 @@ import { CustomerUpdateComponent } from './customer-update/customer-update.compo
     CustomerRegisterComponent,
     CustomerUpdateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    MaterialModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
